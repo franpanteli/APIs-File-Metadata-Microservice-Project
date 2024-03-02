@@ -1,6 +1,6 @@
 Running the project locally:
 
-1. git clone https://github.com/franpanteli/APIs-Exercise-Tracker-Application-Project.git
+1. git clone https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project/blob/main/launching-the-app-locally.txt
 	-> This can take a few seconds and depends on the Wi-Fi speed 
 
 2. cd into its local directory 
