@@ -1,3 +1,21 @@
 These are my notes on the project task page. This project is called "File Metadata Microservice." The URL for the page which these notes are on is https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice
 
-- INSERT NOTES 
+- We are building a full-stack JavaScript application 
+	-> We want it to be similar in functionality to this https://file-metadata-microservice.freecodecamp.rocks/ 
+	-> The multer npm package can be used to handle file uploading for this
+
+- We can do this using three different methods:
+	#1 Locally <- clone their boilerplate code and complete the project locally 
+		-> The link to their boilerplate code is https://github.com/freeCodeCamp/boilerplate-project-filemetadata/ 
+
+	#2 Gitpod <- they also have a Gitpod starter project which you can use 
+
+	#3 A site builder
+		-> They don't specify which site builder to use 
+		-> This needs to include all of the files from the project GitHub repository, since there are unit tests for the project which depend on this 
+
+- Tests for the project submission:
+	-> You should provide your project, not the example URL
+	-> You can submit a form that includes a file upload
+	-> The form file input field has the name attribute set to upfile
+	-> When you submit a file, you receive the file name, type, and size in bytes within the JSON response
