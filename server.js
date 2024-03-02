@@ -37,12 +37,24 @@ require("dotenv").config();
 const multer = require("multer");
 var app = express();
 
-
-
-
-
-
-
+/*
+	About this block of code:
+		-> `use` is the method which is used to setup middleware
+			-> This takes the `req` request object which the client sends to the server, and the `res` response object 
+        which the server sends back 
+		-> This block contains two uses of this method 
+		-> The first sets up middleware from the `cors` module <- this is middleware for security 
+		-> The second sets up middleware for static file serving 
+	
+	Middleware for static file serving:
+		-> There are files stored on the server, for instance the project index.html file 
+		-> Static file serving is when the server sends the client one of these static files 
+		-> The middleware which is required for this is in the express.static function 
+		-> The argument for this method is the location on the server where the files we want it to serve are <- `cwd`
+       (current working directory)
+		-> The first argument of the .use function for this case is the directory on the server where these files that
+      we want served are 
+*/
 
 app.use(cors());
 app.use("/public", express.static(process.cwd() + "/public"));
