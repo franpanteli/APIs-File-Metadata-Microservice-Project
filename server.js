@@ -59,19 +59,47 @@ var app = express();
 app.use(cors());
 app.use("/public", express.static(process.cwd() + "/public"));
 
+/*
+	The` .get` route handler:
+		HTTP GET requests:
+			-> This block of code sets up an HTTP GET request handler 
+			-> This 'gets' information from the server, which it sends back to the client 
+			-> The first argument of this is the path on the server where the information we want to send back to the 
+          client is 
+				-> In this case, this is located at the root path of the server 
+			-> The second argument is its callback function -> the arguments of this are the request (`req`) and response 
+          (`res`) objects 
+				-> These are respectively sent from the client to the server and from the server to the client
 
+		The callback function: 
+			-> This is triggered when the client makes an HTTP GET request to the server 
+			-> This function is the second argument in this use of the `get` method and is defined in the indented code 
+          in the block
+			-> In its response (`res`) object, we send the project index.html file back to the client 
+			-> The argument of the `sendFile` method we use to do this is the path of the html file on the server <- `cwd`, 
+        current working directory 
 
-
-
-
-
-
-
-
+	-> This route handler is for static file serving 
+	-> When the client makes an HTTP GET request to the server, the server sends it back the project index.html file which 
+      it stores 
+	-> This is static file serving -> and this route handler tells the server which directory the file we want to serve is 
+      located at
+*/
 
 app.get("/", function (req, res) {
   res.sendFile(process.cwd() + "/views/index.html");
 });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
