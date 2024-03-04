@@ -90,40 +90,54 @@ app.get("/", function (req, res) {
   res.sendFile(process.cwd() + "/views/index.html");
 });
 
+/*
+	This block of code defines an HTTP POST request handler:
+		-> This block allows the application to take a file upload 
+		-> The `multer` middleware was previously setup, to enable the application to handle these uploads 
+		-> This route handler applies the functions stored by this middleware
 
+	Arguments of the route handler: 
+		-> The first argument of this route handler is the server endpoint to which these HTTP POST requests are made
 
+		The second argument applies the `multer` middleware:
+			-> A Multer instance is first created by using the `multer()` method
+			-> This tells the application that the client intends to upload a file 
+			-> The `single()` method is then used, to indicate that it is a single file the client wants to upload
+			-> The argument of this is the field name of the file being uploaded  
 
+		The third argument is the callback function:
+			-> This contains the request (`req`) object <- from the client to the server
+			-> This also contains the response (`res`) object <- back from the server to the client 
+			-> This function is defined in the main block of code 
 
+	Defining the callback function:
+		What this callback function does:
+			-> This is the JavaScript function which enables our application to handle file uploads
+			-> We want this to take an uploaded file, extract its metadata and return it to the client 
+			-> The first line in this function extracts this metadata
+			-> The second line returns this information as a JSON (JavaScript) object 
 
+		More specifically: 
+			Extracting file metadata:
+				-> The uploaded file is the request (`req`) object, sent to the server
+				-> `req.file` <- this contains the file's metadata (its name, type and size in bytes) 
+				-> We are taking this metadata and storing it in several variables 
+					-> These variables are JavaScript constants (`const`)
 
+			Creating a JSON response object:
+				-> The final line of this function puts the extracted metadata into a JavaScript (JSON) response object
+				-> This object is returned to the client 
 
-
-
-
-
-
-
-
-
-
-
-
-
+	-> We have defined a route handler for file uploads
+	-> The `multer` middleware was used for this
+	-> The server uses this to extract file metadata  
+	-> This is returned to the client as a JSON (JavaScript) object
+*/
 
 app.post("/api/fileanalyse", multer().single("upfile"), function (req, res) {
   const { originalname, mimetype, size } = req.file;
   return res.json({ name: originalname, type: mimetype, size });
 });
-
-
-
-
-
-
-
-
-
-
 
 /*
 	Telling the application to listen to a port:
@@ -137,7 +151,8 @@ app.post("/api/fileanalyse", multer().single("upfile"), function (req, res) {
 			The port number that the application will use: 
 				-> The value of this is stored in the `port` variable
 				-> The value of this is set at the beginning in this block of code
-				-> Since this port number is sensitive information, this file imports its value from an external .env (environment) file 
+				-> Since this port number is sensitive information, this file imports its value from an external .env 
+					(environment) file 
 				-> If this file is non-existent, then we use pipe symbols (`||`) to set its value to 8080  
 
 			The callback function which we want to execute when the server starts listening to the port: 
@@ -148,11 +163,12 @@ app.post("/api/fileanalyse", multer().single("upfile"), function (req, res) {
 		-> The client makes requests to the port, by accessing its associated URL  
 		-> The server can access that same port, by 'listening' to it 
 		-> When the client makes a request to the port via accessing its URL, a request object is sent to the server
-		-> The server then implements route handling and sends back an appropriate response object to the client, via the port 
+		-> The server then implements route handling and sends back an appropriate response object to the client, via
+			the port 
 
 		For this exchange to happen:
-			-> The server must listen to the port <- this is what this section of code does, and we will know that the server is listening 
-				to the port once the console logs the message which is set here 
+			-> The server must listen to the port <- this is what this section of code does, and we will know that the 
+				server is listening to the port once the console logs the message which is set here 
 			-> The client must access the port via a URL 
 			-> That URL is specific to the port 	
 			-> The client must make a request -> in this case, by accessing the microservice at that URL 
