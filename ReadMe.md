@@ -11,4 +11,4 @@ A test upload file for this application can be [downloaded here](https://github.
 
 ## Dependencies
 
-This project has two dependencies. The first is [express](https://www.npmjs.com/package/express), which was used to build the web application in its [server.js file](https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project/blob/main/server.js). The second dependency is [Cors](https://www.npmjs.com/package/cors), whose middleware was used for security purposes.
+This project has three main dependencies. The first is [express](https://www.npmjs.com/package/express), which was used to build the web application in its [server.js file](https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project/blob/main/server.js). The second dependency is [Cors](https://www.npmjs.com/package/cors), whose middleware was used for security purposes. [Multer](https://www.npmjs.com/package/multer) was thirdly used, to enable file upload functionality.
