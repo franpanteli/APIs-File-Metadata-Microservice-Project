@@ -4,6 +4,7 @@ This repository contains my independent problem-solving work, used to produce a 
 
 ## Application Installation & Usage
 INSERT IMAGE OF APPLICATION
+![Screenshot 2024-03-04 at 16 52 31](https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project/assets/131474705/0ba7491a-10f7-4ef2-807c-329de9ffa450)
 
 [My full notes on how to run the application locally are here](https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project/blob/main/launching-the-app-locally.txt). First, clone this repository with `git clone https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project.git`.
 
