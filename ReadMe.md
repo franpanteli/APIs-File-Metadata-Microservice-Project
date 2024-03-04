@@ -6,7 +6,7 @@ This repository contains my independent problem-solving work, used to produce a 
 
 [My full notes on how to run the application locally are here](https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project/blob/main/launching-the-app-locally.txt). First, clone this repository with `git clone https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project.git`. 
 
-A test upload file for this application can be [downloaded here](https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project/blob/main/upload-test-file.txt). This file ('upload-test-file.txt') is also found in this repository. When this is uploaded to the application, its output is `{"name":"upload-test-file.txt","type":"text/plain","size":2606}`. 
+A test upload file for this application can be [downloaded here](https://github.com/franpanteli/APIs-File-Metadata-Microservice-Project/blob/main/upload-test-file.txt). This file ('upload-test-file.txt') is also found in this repository. When this is uploaded to the application, its output metadata is `{"name":"upload-test-file.txt","type":"text/plain","size":2606}`. 
 
 ## Dependencies
 
